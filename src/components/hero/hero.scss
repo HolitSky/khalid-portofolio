@@ -1,0 +1,145 @@
+@import "../../app.scss";
+
+.hero {
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  background: linear-gradient(180deg, #0c0c1d, #111132);
+
+  .wrapper {
+    max-width: 1366px;
+    height: 100%;
+    margin: auto;
+
+    .textContainer {
+      width: 55%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 40px;
+
+      @include mobile {
+        height: 50%;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+      }
+      @include mobile-small {
+        margin-top: 15px;
+        gap: 10px;
+      }
+      @include desktop {
+        // display: none;
+        gap: 15px;
+        padding: 5%;
+      }
+
+      h2 {
+        font-size: 30px;
+        color: rebeccapurple;
+        letter-spacing: 10px;
+      }
+
+      h1 {
+        font-size: 78px;
+
+        @include mobile {
+          font-size: 36px;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        gap: 20px;
+
+        button {
+          position: relative;
+          z-index: 2;
+          font-weight: 300;
+          padding: 20px;
+          color: white;
+          cursor: pointer;
+          background: transparent;
+          border: 1px solid rgba(255, 255, 255, 0.459);
+          border-radius: 10px;
+          -webkit-border-radius: 10px;
+          -moz-border-radius: 10px;
+          -ms-border-radius: 10px;
+          -o-border-radius: 10px;
+        }
+        .btn-contact {
+          background: #110e2f;
+          border: 1px solid gray;
+          transition: background 1s ease-in;
+          -webkit-transition: background 1s ease-in;
+          -moz-transition: background 1s ease-in;
+          -ms-transition: background 1s ease-in;
+          -o-transition: background 1s ease-in;
+        }
+        .btn-contact:hover {
+          background: transparent;
+        }
+      }
+
+      img {
+        width: 45px;
+      }
+    }
+  }
+
+  .imageContainer {
+    height: 100%;
+    position: absolute;
+    top: 20%;
+    right: 8%;
+
+    @include mobile {
+      height: 50%;
+      width: 100%;
+      top: unset;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: 3%;
+    }
+    @include mobile-small {
+      top: 55%;
+    }
+
+    .img-hero {
+      height: 65%;
+    }
+    .floating {
+      animation-name: floating;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+      margin-left: 30px;
+      margin-top: 5px;
+    }
+
+    @keyframes floating {
+      0% {
+        transform: translate(0, 0px);
+      }
+      50% {
+        transform: translate(0, 15px);
+      }
+      100% {
+        transform: translate(0, -0px);
+      }
+    }
+  }
+
+  .slidingTextContainer {
+    position: sticky;
+    font-size: 50vh;
+    width: 50%;
+    bottom: -100px;
+    white-space: nowrap;
+    color: #ffffff09;
+    font-weight: bold;
+  }
+}

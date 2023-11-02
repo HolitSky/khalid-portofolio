@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Sometype+Mono:wght@400;500;600;700&display=swap");
+:root {
+  --color-main: #0c0c1d;
+  --color-second: #f4f6fa;
+  --font-main: "DM Sans", sans-serif;
+  --font-sometype-mono: "Sometype Mono", monospace;
+}
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+body {
+  background-color: var(--color-main);
+  color: var(--color-second);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+@mixin mobile-small {
+  @media (max-width: 378px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 738px) {
+    @content;
+  }
+}
+@mixin mobile-min {
+  @media (min-width: 738px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
