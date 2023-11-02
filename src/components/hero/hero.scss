@@ -97,7 +97,7 @@
     @include mobile {
       height: 50%;
       width: 100%;
-      top: unset;
+      top: 55%;
       bottom: 0;
       display: flex;
       justify-content: center;
@@ -105,7 +105,7 @@
       right: 3%;
     }
     @include mobile-small {
-      top: 55%;
+      top: 60%;
     }
 
     .img-hero {
