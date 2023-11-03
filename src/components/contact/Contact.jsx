@@ -69,7 +69,7 @@ const Contact = () => {
           <input type="text" required placeholder="Name" name="client_name" />
           <input type="email" required placeholder="Email" name="client_email" />
           <textarea rows={8} required placeholder="Message" name="message" />
-          <button disabled>Submit</button>
+          <button>Submit</button>
           {error && alert("Message failed to send, Try Again!")}
           {success && alert("The message was sent successfully, thank you for contacting me")}
         </motion.form>
