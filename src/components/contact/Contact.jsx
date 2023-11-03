@@ -4,6 +4,8 @@ import "./contact.scss";
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+// 6LcM3O4oAAAAAE1C31WZM45zvO3LTi1Zp-bYWICk
 
 const variants = {
   initial: {
@@ -25,8 +27,24 @@ const Contact = () => {
   const formRef = useRef();
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [capVal, setCapVal] = useState(null);
 
-  const isInView = useInView(ref, { margin: "-100px" });
+  const [formValues, setFormValues] = useState({
+    client_name: "",
+    client_email: "",
+    message: "",
+  });
+
+  const resetForm = () => {
+    setFormValues({
+      client_name: "",
+      client_email: "",
+      message: "",
+    });
+    setError(false);
+    setSuccess(false);
+  };
+  const recaptchaRef = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -34,9 +52,15 @@ const Contact = () => {
     emailjs.sendForm("service_kio5ys8", "template_5rra88x", formRef.current, "4e0mfZLuTCJ0ruiST").then(
       (result) => {
         setSuccess(true);
+        alert("The message was sent successfully, thank you for contacting me");
+        resetForm();
+        recaptchaRef.current.reset();
       },
       (error) => {
         setError(true);
+        alert("Message failed to send, Try Again!");
+        resetForm();
+        recaptchaRef.current.reset();
       }
     );
   };
@@ -66,12 +90,38 @@ const Contact = () => {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.7, duration: 1 }}
         >
-          <input type="text" required placeholder="Name" name="client_name" />
-          <input type="email" required placeholder="Email" name="client_email" />
-          <textarea rows={8} required placeholder="Message" name="message" />
-          <button>Submit</button>
-          {error && alert("Message failed to send, Try Again!")}
-          {success && alert("The message was sent successfully, thank you for contacting me")}
+          <input
+            type="text"
+            required
+            placeholder="Name"
+            name="client_name"
+            value={formValues.client_name}
+            onChange={(e) => setFormValues({ ...formValues, client_name: e.target.value })}
+          />
+          <input
+            type="email"
+            required
+            placeholder="Email"
+            name="client_email"
+            value={formValues.client_email}
+            onChange={(e) => setFormValues({ ...formValues, client_email: e.target.value })}
+          />
+          <textarea
+            rows={8}
+            required
+            placeholder="Message"
+            name="message"
+            value={formValues.message}
+            onChange={(e) => setFormValues({ ...formValues, message: e.target.value })}
+          />
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey="6LcM3O4oAAAAAE1C31WZM45zvO3LTi1Zp-bYWICk"
+            onChange={(val) => setCapVal(val)}
+          />
+          <button disabled={!capVal}>Submit</button>
+          {error && "Message failed to send, Try Again!"}
+          {success && "The message was sent successfully, thank you for contacting me"}
         </motion.form>
       </div>
     </motion.div>
