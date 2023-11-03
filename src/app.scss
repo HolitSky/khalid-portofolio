@@ -32,6 +32,10 @@ section {
   scroll-snap-align: center;
 }
 
+section:last-child {
+  height: 115vh;
+}
+
 @mixin mobile-small {
   @media (max-width: 378px) {
     @content;
