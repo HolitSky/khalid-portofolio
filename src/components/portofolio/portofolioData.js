@@ -1,27 +1,44 @@
+import IMG_VOCA from "../../assets/img/voca.png";
+import IMG_ARC from "../../assets/img/arculus.png";
+import IMG_TRIDENT from "../../assets/img/trident.png";
+import IMG_CONSERVATION from "../../assets/img/hadiwana.png";
+import IMG_GOINN from "../../assets/img/goinn.png";
+
 const portofolioData = [
   {
     id: 1,
-    title: "React JS Web App",
-    img: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit odit quo assumenda quas unde explicabo, voluptate dolorem similique quae nulla!",
+    title: "Conservation Web",
+    img: IMG_CONSERVATION,
+    desc: "This website focuses on promoting and supporting conservation efforts. It includes resources and information on various conservation projects, providing a platform for awareness and engagement. The site is currently under development.",
+    link: "https://devop.hadiwanatales.org/",
   },
   {
     id: 2,
-    title: "Company Profile Web",
-    img: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit odit quo assumenda quas unde explicabo, voluptate dolorem similique quae nulla!",
+    title: "Trident Web",
+    img: IMG_TRIDENT,
+    desc: "Trident Web is designed to facilitate diving certification and training activities. The site features information on diving courses, certification processes, and training schedules.",
+    link: "https://trident.arculus-indonesia.com/",
   },
   {
     id: 3,
-    title: "UI/UX Design Dashboard Web",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2015&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit odit quo assumenda quas unde explicabo, voluptate dolorem similique quae nulla!",
+    title: "Arculus Web",
+    img: IMG_ARC,
+    desc: "Arculus Web focuses on multi-security projects in the IT sector, providing comprehensive solutions and services.",
+    link: "https://arculus-indonesia.com/",
   },
   {
     id: 4,
-    title: "UI/UX Design Mobile App",
-    img: "https://images.unsplash.com/photo-1603539947678-cd3954ed515d?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit odit quo assumenda quas unde explicabo, voluptate dolorem similique quae nulla!",
+    title: "Voca Web",
+    img: IMG_VOCA,
+    desc: "Voca Web is a business partner platform for language-related job opportunities, offering services like proofreading, translation, and subtitling",
+    link: "https://voca.arculus-indonesia.com/",
+  },
+  {
+    id: 5,
+    title: "Bappeda Kab.Bogor | GoInnovator Dashboard",
+    img: IMG_GOINN,
+    desc: "This UI/UX design project involved creating a web dashboard, focusing on user-friendly interfaces and seamless user experiences.",
+    link: "https://www.figma.com/design/z2cmiFBWWHhMgMLfMFSmpL/WEB-INOVATOR?node-id=1-18&t=yUvgp9jABUa9Jway-1",
   },
 ];
 
